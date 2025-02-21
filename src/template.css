@@ -1,4 +1,5 @@
-
+/* Font for sidebar */
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&family=Courgette&family=Dancing+Script:wght@400..700&family=Jura:wght@300..700&family=Libre+Bodoni:ital,wght@0,400..700;1,400..700&family=Merienda:wght@300..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Neuton:ital,wght@0,200;0,300;0,400;0,700;0,800;1,400&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Pinyon+Script&family=Playwrite+VN:wght@100..400&family=Poiret+One&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Roboto+Slab:wght@100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Silkscreen:wght@400;700&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
 
 * {
     box-sizing: border-box;
@@ -7,9 +8,18 @@
 }
 
 
+/* Top Level */
 body {
     display: grid;
     grid-template-columns: 1fr repeat(3, 1fr);
+}
+
+/* Sidebar */
+
+.top,
+.menu,
+.category {
+    margin: 20px 0;
 }
 
 
@@ -18,77 +28,131 @@ body {
 
     height: 100vh;
     background-color: #fbfcfc;
+    padding: 0 15px;
+
+    font-family: "Roboto Mono", serif;
+    font-size: 12px;
 }
 
-.top {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.top > div:nth-of-type(1) {
-    display: flex;
-    column-gap: 15px;
-    align-items: center;
-}
-
-.top > div:nth-of-type(1) svg:nth-of-type(1) {
+#sidebar #profile {
     height: 30px;
     width: 30px;
 }
 
-.top > div:nth-of-type(2) {
-    display: flex;
-    column-gap: 15px;
-}
-
-.top > div:nth-of-type(1) svg:nth-of-type(2) {
-    height: 10px;
-    width: 10px;
-}
-
-.top > div:nth-of-type(2) svg:nth-of-type(1),
-.top > div:nth-of-type(2) svg:nth-of-type(2) {
+.top svg {
     height: 15px;
     width: 15px;
 }
 
-
-.new-task {
+.top,
+.top > div {
     display: flex;
-    column-gap: 10px;
     align-items: center;
-}
-
-.new-task p:nth-of-type(1) {
-    border: none;
-    border-radius: 50%;
-    height: 20px;
-    width: 20px;
-    background-color: orange;
-    font-weight: bold;
-    color: white;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-
-.general-labels p {
-    display: flex;
     justify-content: space-between;
 }
 
-
-.category ul span {
-    color: lightcoral;
-    font-weight: bold;
-    margin: 0 10px;
+.top > div {
+    column-gap: 15px;
 }
+
+.menu {
+    list-style-type: none;
+}
+
+.menu > li {
+    display: flex;
+    align-items: center;
+    padding: 5px 5px;
+    border-radius: 5px;
+}
+
+.menu > li:not(.add-task):hover {
+    cursor: pointer;
+    background-color: #e67d2221;
+}
+
+.add-task {
+    cursor: pointer;
+    padding: 0 5px;
+    column-gap: 10px;
+}
+
+.add-task button {
+    border-radius: 50%;
+    padding: 2px 5px;
+    border: none;
+    background-color: lightseagreen;
+    color: white;
+    font-weight: bold;
+}
+
+.inbox,
+.upcoming {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.inbox svg,
+.upcoming svg {
+    height: 20px;
+    width: 20px;
+}
+
+
+.inbox > div,
+.upcoming > div {
+    display: flex;
+    align-items: center;
+    column-gap: 10px;
+}
+
+.category {
+    padding: 0 5px;
+}
+
+.category > p {
+    margin-bottom: 10px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.category > p svg {
+    height: 15px;
+    width: 15px;
+    background-color: #f1948a;
+    border-radius: 50%;
+    padding: 2px;
+}
+
+.category ul {
+    list-style-type: none;
+}
+
+.category-list > li,
+.category-list > li > div {
+    display: flex;
+    align-items: center;
+}
+
+.category-list > li {
+    justify-content: space-between;
+    padding: 5px 5px;
+    border-radius: 5px;
+}
+
+.category-list > li > div {
+    column-gap: 10px;
+}
+
+.category-list > li:hover {
+    cursor: pointer;
+    background-color: #e67d2221;
+}
+
 
 #tasks {
     grid-column: 2 / 5;
-
-    min-height: 100vh;
 }
