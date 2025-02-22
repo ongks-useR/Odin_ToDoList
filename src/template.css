@@ -1,5 +1,5 @@
 /* Font for sidebar */
-@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&family=Courgette&family=Dancing+Script:wght@400..700&family=Jura:wght@300..700&family=Libre+Bodoni:ital,wght@0,400..700;1,400..700&family=Merienda:wght@300..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Neuton:ital,wght@0,200;0,300;0,400;0,700;0,800;1,400&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Pinyon+Script&family=Playwrite+VN:wght@100..400&family=Poiret+One&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Roboto+Slab:wght@100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Silkscreen:wght@400;700&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bruno+Ace&family=Cinzel:wght@400..900&family=Courgette&family=Dancing+Script:wght@400..700&family=Jura:wght@300..700&family=Libre+Bodoni:ital,wght@0,400..700;1,400..700&family=Merienda:wght@300..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Neuton:ital,wght@0,200;0,300;0,400;0,700;0,800;1,400&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Pinyon+Script&family=Playwrite+VN:wght@100..400&family=Poiret+One&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Roboto+Slab:wght@100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Silkscreen:wght@400;700&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
 
 * {
     box-sizing: border-box;
@@ -16,140 +16,158 @@ body {
 
 /* Sidebar */
 
-.top,
-.menu,
-.category {
-    margin: 20px 0;
-}
-
-
 #sidebar {
     grid-column: 1 / 2;
 
     height: 100vh;
     background-color: #fbfcfc;
-    padding: 0 15px;
-
-    font-family: "Roboto Mono", serif;
     font-size: 12px;
+
+    display: flex;
+    flex-direction: column;
+    row-gap: 15px;
+    padding: 5px 10px;
 }
 
-#sidebar #profile {
-    height: 30px;
-    width: 30px;
-}
-
-.top svg {
-    height: 15px;
-    width: 15px;
-}
-
-.top,
-.top > div {
+#sidebar > div:nth-of-type(1) {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    padding: 5px 10px;
+
+    font-family: "Bruno Ace", serif;
+    font-weight: 400;
+    font-style: normal;
+    color: lightcoral;
 }
 
-.top > div {
+.profile,
+.sidebar-control {
+    display: flex;
+    align-items: center;
     column-gap: 15px;
 }
 
-.menu {
-    list-style-type: none;
-}
 
-.menu > li {
-    display: flex;
-    align-items: center;
-    padding: 5px 5px;
-    border-radius: 5px;
-}
-
-.menu > li:not(.add-task):hover {
+.profile svg:nth-of-type(1) {
+    height: 25px;
+    width: 25px;
     cursor: pointer;
-    background-color: #e67d2221;
 }
 
-.add-task {
+.profile svg:nth-of-type(2) {
+    height: 15px;
+    width: 15px;
     cursor: pointer;
-    padding: 0 5px;
-    column-gap: 10px;
 }
 
-.add-task button {
-    border-radius: 50%;
-    padding: 2px 5px;
-    border: none;
+.sidebar-control svg {
+    height: 15px;
+    width: 15px;
+    cursor: pointer;
+}
+
+
+#sidebar > div:nth-of-type(2) {
+    padding: 5px 10px;
+}
+
+#add-task {
+    width: 100%;
     background-color: lightseagreen;
+    border: none;
+    border-radius: 5px;
     color: white;
+    padding: 5px 0;
+    cursor: pointer;
+
+    font-family: "Jura", serif;
     font-weight: bold;
 }
 
-.inbox,
-.upcoming {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+#sidebar > div:nth-of-type(2) > button span {
+    color: white;
+    margin: 0 5px;
 }
 
-.inbox svg,
-.upcoming svg {
+.general-list {
+    list-style-type: none;
+    font-family: "Montserrat", serif;
+}
+
+.general-list > li,
+.general-list > li > div {
+    display: flex;
+    align-items: center;
+}
+
+.general-list > li {
+    justify-content: space-between;
+    margin: 5px 0;
+    padding: 5px 10px;
+}
+
+.general-list > li:hover {
+    background-color: rgba(240, 128, 128, 0.267);
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.general-list > li > div {
+    column-gap: 10px;
+}
+
+.general-list svg {
     height: 20px;
     width: 20px;
 }
 
-
-.inbox > div,
-.upcoming > div {
-    display: flex;
-    align-items: center;
-    column-gap: 10px;
-}
-
 .category {
-    padding: 0 5px;
-}
-
-.category > p {
-    margin-bottom: 10px;
-
     display: flex;
     align-items: center;
     justify-content: space-between;
+    padding: 5px 10px;
+
+    font-family: "Montserrat", serif;
+    font-weight: bold;
 }
 
-.category > p svg {
+#add-category {
+    background-color: lightseagreen;
+    border: none;
+    color: white;
     height: 15px;
     width: 15px;
-    background-color: #f1948a;
     border-radius: 50%;
-    padding: 2px;
+    font-family: "Montserrat", serif;
+    font-weight: bold;
+    cursor: pointer;
 }
 
-.category ul {
+.category-list {
     list-style-type: none;
+    font-family: "Montserrat", serif;
 }
 
-.category-list > li,
-.category-list > li > div {
+.category-list > li > div,
+.category-list > li {
     display: flex;
-    align-items: center;
 }
 
 .category-list > li {
     justify-content: space-between;
-    padding: 5px 5px;
+    margin: 5px 0;
+    padding: 5px 10px;
+}
+
+.category-list > li:hover {
+    background-color: rgba(240, 128, 128, 0.267);
+    cursor: pointer;
     border-radius: 5px;
 }
 
 .category-list > li > div {
     column-gap: 10px;
-}
-
-.category-list > li:hover {
-    cursor: pointer;
-    background-color: #e67d2221;
 }
 
 
